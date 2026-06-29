@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Comisión Consulta · WGH Argentina — Lo que las Mujeres Necesitan</title>
+<meta name="description" content="Comisión Consulta de WGH Argentina. Sumate a la Consulta Nacional 'Lo que las Mujeres Necesitan' y amplificá la convocatoria con nuestro toolkit." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+/* =====================================================================
+   WGH ARGENTINA · Landing Comisión CONSULTA
+   Acento: naranja #E8512A · Base: midnight #0D2B35
+   Página single-file. Editar el contador en data-current / data-goal.
+   ===================================================================== */
+:root{
+  --midnight:#0D2B35;
+  --aqua:#96D6DF;
+  --lime:#C8E535;
+  --gold:#F5A623;
+  --accent:#E8512A;          /* << color de acento de la comisión */
+  --accent-soft:rgba(232,81,42,.12);
+  --ink:#0D2B35;
+  --muted:#5a6a6f;
+  --line:#e6e9ea;
+  --bg-soft:#FCFAF9;
+  --footer-dark:#08222b;
+  --font:'Inter',system-ui,-apple-system,sans-serif;
+  --nav-h:70px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h)}
+body{font-family:var(--font);color:var(--ink);background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{line-height:1.12;font-weight:800;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+button{font-family:var(--font);cursor:pointer;border:none;background:none}
+img{display:block;max-width:100%}
+ul{list-style:none}
+
+/* layout */
+.section{padding:88px 0}
+.container{width:100%;max-width:1140px;margin:0 auto;padding:0 24px}
+.center{text-align:center}
+.eyebrow{font-weight:700;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.section-title{font-size:2.4rem;margin:12px 0 16px}
+.lead{font-size:1.12rem;color:var(--muted);max-width:680px}
+.lead.center{margin-left:auto;margin-right:auto}
+.text-muted{color:var(--muted)}
+.mt-s{margin-top:18px}.mt-m{margin-top:32px}.mt-l{margin-top:56px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:.95rem;padding:13px 26px;border-radius:30px;transition:transform .15s ease,background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;border:2px solid transparent}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:18px;height:18px}
+.btn-accent{background:var(--accent);color:#fff}
+.btn-accent:hover{box-shadow:0 10px 24px var(--accent-soft)}
+.btn-dark{background:var(--midnight);color:#fff}
+.btn-lime{background:var(--lime);color:var(--midnight)}
+.btn-outline{background:transparent;color:var(--midnight);border-color:var(--midnight)}
+.btn-outline:hover{background:var(--midnight);color:#fff}
+.btn-outline-white{background:transparent;color:#fff;border-color:rgba(255,255,255,.6)}
+.btn-outline-white:hover{background:#fff;color:var(--midnight)}
+.btn-sm{padding:9px 18px;font-size:.85rem}
+
+/* navbar */
+.navbar{position:sticky;top:0;z-index:100;background:var(--midnight);height:var(--nav-h);display:flex;align-items:center}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;gap:16px}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer}
+.brand-text{color:#fff;font-weight:700;font-size:1rem;letter-spacing:.01em}
+.brand-text b{color:var(--accent);font-weight:800}
+.brand-text span{display:block;font-weight:500;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;color:var(--aqua);margin-top:1px}
+.nav-links{display:flex;align-items:center;gap:2px}
+.nav-link{color:#fff;font-size:.9rem;font-weight:500;padding:8px 12px;border-radius:6px;transition:color .15s}
+.nav-link:hover{color:var(--accent)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-toggle{display:none;color:#fff}
+.drawer-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90}
+.drawer{position:fixed;top:0;right:0;height:100%;width:80%;max-width:320px;background:var(--midnight);z-index:95;padding:24px;display:flex;flex-direction:column;gap:4px;box-shadow:-8px 0 30px rgba(0,0,0,.3)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.drawer .nav-link{padding:13px 8px;font-size:1rem;border-bottom:1px solid rgba(255,255,255,.08)}
+.drawer .nav-actions{flex-direction:column;align-items:stretch;margin-top:16px}
+.drawer .btn{justify-content:center}
+
+/* hero */
+.hero{position:relative;background:var(--midnight);color:#fff;overflow:hidden;padding:96px 0 104px}
+.hero::after{content:"";position:absolute;top:-120px;right:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,var(--accent) 0%,transparent 68%);opacity:.32;pointer-events:none}
+.hero .container{position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:48px;align-items:center}
+.hero h1{font-size:3.4rem;font-weight:900;margin:18px 0 20px;line-height:1.04}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.sub{color:rgba(255,255,255,.85);font-size:1.18rem;max-width:560px}
+.hero-ctas{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap}
+.tag-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);color:#fff;font-weight:600;font-size:.8rem;letter-spacing:.04em;padding:8px 16px;border-radius:24px}
+.tag-pill .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 var(--accent);animation:pulse 1.8s infinite}
+
+/* counter card (hero side) */
+.counter-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:30px}
+.counter-label{color:var(--aqua);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}
+.counter-num{font-size:3.6rem;font-weight:900;line-height:1;color:#fff;margin:10px 0 2px}
+.counter-num small{font-size:1.1rem;font-weight:600;color:rgba(255,255,255,.6)}
+.counter-goal{color:rgba(255,255,255,.7);font-size:.92rem}
+.progress{height:12px;border-radius:8px;background:rgba(255,255,255,.14);margin:18px 0 8px;overflow:hidden}
+.progress > span{display:block;height:100%;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width 1s ease}
+.counter-pct{font-weight:700;color:var(--accent);font-size:.9rem}
+
+/* generic cards */
+.cards-grid{display:grid;gap:22px;margin-top:40px}
+.cols-3{grid-template-columns:repeat(3,1fr)}
+.cols-2{grid-template-columns:repeat(2,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(13,43,53,.10)}
+.card .ico{width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);margin-bottom:16px}
+.card .ico svg{width:24px;height:24px}
+.card h3{font-size:1.18rem;font-weight:700;margin-bottom:8px}
+.card .desc{color:var(--muted);font-size:.96rem}
+.card .card-link{display:inline-flex;align-items:center;gap:6px;margin-top:16px;color:var(--accent);font-weight:600;font-size:.92rem}
+.card .card-link svg{width:16px;height:16px;transition:transform .15s}
+.card:hover .card-link svg{transform:translateX(3px)}
+
+/* figures / stats band */
+.band{background:var(--midnight);color:#fff}
+.figures{display:grid;grid-template-columns:repeat(3,1fr)}
+.figure{padding:48px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.12)}
+.figure:last-child{border-right:none}
+.figure .n{font-size:3rem;font-weight:900;color:var(--accent);line-height:1}
+.figure p{color:rgba(255,255,255,.82);font-size:.92rem;margin-top:10px;max-width:280px;margin-inline:auto}
+
+/* action / CTA cards (links) */
+.action-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.action{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:14px;padding:30px}
+.action .ico{width:50px;height:50px;border-radius:12px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);margin-bottom:18px}
+.action .ico svg{width:26px;height:26px}
+.action h3{font-size:1.25rem;margin-bottom:8px}
+.action p{color:var(--muted);font-size:.95rem;flex:1;margin-bottom:20px}
+.action .btn{align-self:flex-start}
+
+/* toolkit */
+.toolkit{background:var(--bg-soft)}
+.toolkit-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:26px 0 30px}
+.filter{padding:9px 18px;border-radius:24px;font-weight:600;font-size:.86rem;background:#fff;border:1px solid var(--line);color:var(--muted);transition:all .15s}
+.filter:hover{border-color:var(--accent);color:var(--accent)}
+.filter.active{background:var(--midnight);color:#fff;border-color:var(--midnight)}
+.pieces{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.piece{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px;display:flex;flex-direction:column}
+.piece-top{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.piece-ico{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);flex-shrink:0}
+.piece-ico svg{width:20px;height:20px}
+.piece-cat{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+.piece h4{font-size:1.05rem;font-weight:700}
+.piece-text{background:var(--bg-soft);border:1px dashed var(--line);border-radius:10px;padding:14px 16px;font-size:.9rem;color:#39474c;white-space:pre-wrap;flex:1;margin-bottom:14px;max-height:220px;overflow:auto}
+.piece-actions{display:flex;gap:10px}
+.copy-btn{display:inline-flex;align-items:center;gap:7px;background:var(--midnight);color:#fff;font-weight:600;font-size:.84rem;padding:9px 16px;border-radius:22px;transition:background .2s}
+.copy-btn:hover{background:#163d49}
+.copy-btn.copied{background:var(--accent)}
+.copy-btn svg{width:15px;height:15px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;position:relative}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-16px;left:24px;width:38px;height:38px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;display:grid;place-items:center;font-size:1.05rem}
+.step h3{font-size:1.1rem;margin:14px 0 6px}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* closing CTA */
+.closing{background:linear-gradient(135deg,var(--midnight),#13414f);color:#fff;text-align:center}
+.closing h2{font-size:2.4rem;margin-bottom:14px}
+.closing p{color:rgba(255,255,255,.85);max-width:620px;margin:0 auto 28px;font-size:1.1rem}
+.closing-ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+/* footer */
+.footer{background:var(--footer-dark);color:#fff;padding:56px 0 28px}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:32px}
+.footer-brand p{color:rgba(255,255,255,.7);font-size:.92rem;max-width:300px;margin-top:12px}
+.footer h5{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aqua);margin-bottom:14px;font-weight:700}
+.footer-col a{display:block;color:rgba(255,255,255,.78);padding:5px 0;font-size:.92rem}
+.footer-col a:hover{color:var(--accent)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:22px;color:rgba(255,255,255,.55);font-size:.84rem;text-align:center}
+
+/* toast */
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--midnight);color:#fff;padding:13px 24px;border-radius:30px;font-weight:600;font-size:.9rem;box-shadow:0 12px 30px rgba(0,0,0,.25);z-index:300;transition:transform .3s ease;display:flex;align-items:center;gap:9px}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast svg{width:18px;height:18px;color:var(--lime)}
+
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--accent)}70%{box-shadow:0 0 0 9px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* responsive */
+@media(max-width:940px){
+  .nav-links,.nav-actions{display:none}
+  .nav-toggle{display:inline-flex}
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .footer-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  .section{padding:60px 0}
+  .hero{padding:64px 0 72px}
+  .hero h1{font-size:2.5rem}
+  .section-title{font-size:1.9rem}
+  .cols-3,.cols-2,.action-grid,.steps,.pieces,.figures{grid-template-columns:1fr}
+  .figure{border-right:none;border-bottom:1px solid rgba(255,255,255,.12)}
+  .figure:last-child{border-bottom:none}
+  .footer-top{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container">
+    <a class="brand" href="#inicio">
+      <svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="18" fill="var(--accent)" opacity="0.18" stroke="var(--accent)" stroke-width="1.5"/>
+        <g stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round">
+          <line x1="20" y1="20" x2="34" y2="20"/><line x1="20" y1="20" x2="32.1" y2="27"/>
+          <line x1="20" y1="20" x2="27" y2="32.1"/><line x1="20" y1="20" x2="20" y2="34"/>
+          <line x1="20" y1="20" x2="12.9" y2="32.1"/><line x1="20" y1="20" x2="7.9" y2="27"/>
+          <line x1="20" y1="20" x2="6" y2="20"/><line x1="20" y1="20" x2="7.9" y2="13"/>
+          <line x1="20" y1="20" x2="12.9" y2="7.9"/><line x1="20" y1="20" x2="20" y2="6"/>
+          <line x1="20" y1="20" x2="27" y2="7.9"/><line x1="20" y1="20" x2="32.1" y2="13"/>
+        </g>
+        <circle cx="20" cy="20" r="2.6" fill="var(--accent)"/>
+      </svg>
+      <span class="brand-text">WGH <b>Consulta</b><span>Argentina</span></span>
+    </a>
+    <div class="nav-links">
+      <a class="nav-link" href="#consulta">La Consulta</a>
+      <a class="nav-link" href="#participar">Participar</a>
+      <a class="nav-link" href="#voceras">Voceras</a>
+      <a class="nav-link" href="#toolkit">Toolkit</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-outline-white btn-sm" href="https://loquelasmujeresnecesitan.org" target="_blank" rel="noopener">Sitio oficial</a>
+      <a class="btn btn-accent btn-sm" href="#participar">Responder consulta</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="inicio" class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <span class="tag-pill"><span class="dot"></span> Consulta Nacional · Activa</span>
+        <h1>Lo que las mujeres <em>necesitan</em> para cuidar su salud</h1>
+        <p class="sub">La Comisión Consulta impulsa el primer relevamiento nacional que escucha de forma sistemática a las mujeres de todo el país. Tu voz construye el Mapa de Evidencia Nacional.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-accent" href="#participar">Responder la consulta</a>
+          <a class="btn btn-outline-white" href="#toolkit">Amplificá en tu red</a>
+        </div>
+      </div>
+      <!-- CONTADOR: editar data-current y data-goal -->
+      <div class="counter-card" id="counter" data-current="1800" data-goal="5000">
+        <div class="counter-label">Respuestas recibidas</div>
+        <div class="counter-num"><span id="countNum">1.800</span></div>
+        <div class="counter-goal">de <strong id="countGoal">5.000</strong> · meta nacional</div>
+        <div class="progress"><span id="progressBar" style="width:0%"></span></div>
+        <div class="counter-pct"><span id="countPct">0</span>% alcanzado · ¡faltás vos!</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- POR QUÉ / CONSULTA -->
+<section id="consulta" class="section">
+  <div class="container">
+    <p class="eyebrow">Por qué importa</p>
+    <h2 class="section-title">Una consulta que se convierte en política pública</h2>
+    <p class="lead">El sistema de salud se diseña, muchas veces, sin escuchar a quienes más lo usan. "Lo que las Mujeres Necesitan" cambia eso: transforma voces territoriales en evidencia para decidir mejor.</p>
+    <div class="cards-grid cols-3">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Escuchar de forma sistemática</h3>
+        <p class="desc">Un relevamiento cualitativo y federal que recoge necesidades reales, no supuestos, sobre la salud de las mujeres.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg></div>
+        <h3>Construir evidencia</h3>
+        <p class="desc">Cada respuesta alimenta el Mapa de Evidencia Nacional: un insumo concreto para diseñar políticas con datos.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
+        <h3>Incidir en la decisión</h3>
+        <p class="desc">Los resultados llegan a quienes deciden, para que la salud de las mujeres sea prioridad en la agenda sanitaria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FIGURES BAND -->
+<section class="band">
+  <div class="container" style="padding:0">
+    <div class="figures">
+      <div class="figure"><div class="n">51%</div><p>de la población argentina son mujeres y principales usuarias del sistema de salud</p></div>
+      <div class="figure"><div class="n" id="figCurrent">1.800</div><p>mujeres ya respondieron la consulta en todo el país</p></div>
+      <div class="figure"><div class="n">5.000</div><p>es la meta nacional para un mapa verdaderamente representativo</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTICIPAR -->
+<section id="participar" class="section">
+  <div class="container">
+    <p class="eyebrow">Sumate</p>
+    <h2 class="section-title">Tres formas de ser parte</h2>
+    <p class="lead">Respondé, difundí con tu link personalizado y, si querés dar un paso más, convertite en vocera de la consulta en tu comunidad.</p>
+    <div class="action-grid">
+      <div class="action">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Respondé la consulta</h3>
+        <p>Cinco minutos que valen oro. Contanos qué necesitás para cuidar tu salud y sumá tu voz al mapa nacional.</p>
+        <a class="btn btn-accent" href="https://loquelasmujeresnecesitan.org" target="_blank" rel="noopener">Ir a la consulta →</a>
+      </div>
+      <div class="action">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg></div>
+        <h3>Difundí con tu link</h3>
+        <p>Generá tu link personalizado para invitar a tu red y seguir cuántas respuestas sumás vos a la consulta.</p>
+        <a class="btn btn-outline" href="https://milicaro.github.io/townhalljunio/form_link_consulta.html" target="_blank" rel="noopener">Crear mi link →</a>
+      </div>
+      <div class="action">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+        <h3>Sé vocera</h3>
+        <p>Llevá la consulta a tu organización, hospital o comunidad. Te damos los materiales y el acompañamiento.</p>
+        <a class="btn btn-outline" href="https://milicaro.github.io/townhalljunio/form_voceras.html" target="_blank" rel="noopener">Quiero ser vocera →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOCERAS / CÓMO FUNCIONA -->
+<section id="voceras" class="section toolkit">
+  <div class="container">
+    <p class="eyebrow">Programa de Voceras</p>
+    <h2 class="section-title">Cómo amplificar en 3 pasos</h2>
+    <div class="steps">
+      <div class="step">
+        <h3>Anotate como vocera</h3>
+        <p>Completá el formulario de voceras. Te sumamos al grupo y te enviamos el toolkit completo de amplificación.</p>
+      </div>
+      <div class="step">
+        <h3>Elegí tus piezas</h3>
+        <p>Email, WhatsApp, LinkedIn, Instagram, X y más. Copiá el texto listo para usar y adaptalo a tu voz.</p>
+      </div>
+      <div class="step">
+        <h3>Compartí y sumá</h3>
+        <p>Difundí con tu link personalizado y mirá cómo crece el contador hacia las 5.000 respuestas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLKIT DE AMPLIFICACIÓN -->
+<section id="toolkit" class="section">
+  <div class="container">
+    <div class="toolkit-head">
+      <div>
+        <p class="eyebrow">Toolkit de amplificación</p>
+        <h2 class="section-title" style="margin-bottom:6px">10 piezas listas para copiar y pegar</h2>
+        <p class="text-muted">Elegí el canal, copiá el mensaje y sumá tu voz a la consulta. Acordate de pegar tu link personalizado donde dice [TU LINK].</p>
+      </div>
+      <button class="btn btn-dark" id="downloadAll">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+        Descargar toolkit completo
+      </button>
+    </div>
+
+    <div class="filters" id="filters">
+      <button class="filter active" data-cat="todas">Todas</button>
+      <button class="filter" data-cat="email">Email</button>
+      <button class="filter" data-cat="whatsapp">WhatsApp</button>
+      <button class="filter" data-cat="linkedin">LinkedIn</button>
+      <button class="filter" data-cat="instagram">Instagram</button>
+      <button class="filter" data-cat="twitter">X / Twitter</button>
+      <button class="filter" data-cat="video">Video</button>
+      <button class="filter" data-cat="institucional">Institucional</button>
+    </div>
+
+    <div class="pieces" id="pieces"><!-- piezas inyectadas por JS --></div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="section closing">
+  <div class="container">
+    <h2>Tu voz cambia el sistema</h2>
+    <p>Cada respuesta acerca a la Argentina a tener, por primera vez, políticas de salud diseñadas escuchando a las mujeres. Sumate hoy.</p>
+    <div class="closing-ctas">
+      <a class="btn btn-accent" href="https://loquelasmujeresnecesitan.org" target="_blank" rel="noopener">Responder la consulta</a>
+      <a class="btn btn-outline-white" href="https://milicaro.github.io/townhalljunio/form_voceras.html" target="_blank" rel="noopener">Ser vocera</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-text" style="font-size:1.1rem">WGH <b>Argentina</b></span>
+        <p>Comisión Consulta · Women in Global Health Argentina. Impulsamos el liderazgo de las mujeres en salud y políticas públicas basadas en evidencia.</p>
+      </div>
+      <div class="footer-col">
+        <h5>La consulta</h5>
+        <a href="https://loquelasmujeresnecesitan.org" target="_blank" rel="noopener">Sitio oficial</a>
+        <a href="#participar">Responder</a>
+        <a href="https://milicaro.github.io/townhalljunio/form_link_consulta.html" target="_blank" rel="noopener">Crear mi link</a>
+        <a href="https://milicaro.github.io/townhalljunio/form_voceras.html" target="_blank" rel="noopener">Ser vocera</a>
+      </div>
+      <div class="footer-col">
+        <h5>Comisiones WGH</h5>
+        <a href="#">Consulta</a>
+        <a href="#">Coloquio</a>
+        <a href="#">Comunidad</a>
+        <a href="#">Alianza</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Women in Global Health Argentina · Comisión Consulta. Hecho con 💚 por la red.</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg><span id="toastMsg">Copiado</span></div>
+
+<script>
+/* =========================================================
+   DATOS DEL TOOLKIT — editá los textos libremente.
+   Usá [TU LINK] como marcador del link personalizado.
+   ========================================================= */
+const PIECES = [
+  { cat:'email', icon:'mail', title:'Email institucional',
+    text:`Asunto: Tu voz puede cambiar la salud de las mujeres en Argentina
+
+Hola,
+
+Te escribo para invitarte a una iniciativa que me parece importante: la Consulta Nacional "Lo que las Mujeres Necesitan", impulsada por Women in Global Health Argentina.
+
+Es la primera vez que se escucha de forma sistemática y federal qué necesitan las mujeres para cuidar su salud. Cada respuesta construye un Mapa de Evidencia Nacional que llega a quienes diseñan políticas públicas.
+
+Toma solo 5 minutos: [TU LINK]
+
+Gracias por sumar tu voz y, si podés, por compartirlo con tu red.
+
+Un abrazo,` },
+
+  { cat:'whatsapp', icon:'chat', title:'WhatsApp · mensaje directo',
+    text:`Hola! 👋 Te comparto algo que vale 5 minutos: la Consulta Nacional "Lo que las Mujeres Necesitan" de WGH Argentina.
+
+Es para escuchar qué necesitamos las mujeres para cuidar nuestra salud y que eso se convierta en política pública. 💚
+
+Respondé acá 👉 [TU LINK]
+
+Si te suma, pasalo 🙌` },
+
+  { cat:'whatsapp', icon:'chat', title:'WhatsApp · estado / historia',
+    text:`💬 ¿Qué necesitás para cuidar tu salud?
+Sumá tu voz a la Consulta Nacional de WGH Argentina 👉 [TU LINK]
+#LoQueLasMujeresNecesitan` },
+
+  { cat:'linkedin', icon:'link', title:'LinkedIn · posteo',
+    text:`El sistema de salud se diseña, muchas veces, sin escuchar a quienes más lo usan: las mujeres.
+
+Women in Global Health Argentina lanzó la Consulta Nacional "Lo que las Mujeres Necesitan", el primer relevamiento federal que transforma voces territoriales en evidencia para la política pública.
+
+Ya somos miles, pero queremos llegar a 5.000 respuestas para que el mapa sea verdaderamente representativo.
+
+Te invito a responder (son 5 minutos) y a compartirlo en tu red 👉 [TU LINK]
+
+#SaludDeLasMujeres #PolíticasBasadasEnEvidencia #WGHArgentina #LiderazgoEnSalud` },
+
+  { cat:'instagram', icon:'cam', title:'Instagram · caption de feed',
+    text:`Tu voz construye evidencia 💚
+
+La Consulta Nacional "Lo que las Mujeres Necesitan" escucha qué necesitamos las mujeres para cuidar nuestra salud, en todo el país.
+
+✨ Son 5 minutos
+✨ Es anónima
+✨ Llega a quienes deciden
+
+Respondé desde el link en bio o en 👉 [TU LINK]
+
+#LoQueLasMujeresNecesitan #WGHArgentina #SaludDeLasMujeres #MujeresEnSalud` },
+
+  { cat:'instagram', icon:'cam', title:'Instagram · texto para historia',
+    text:`👉 ¿Qué necesitás para cuidar tu salud?
+Sumate a la Consulta Nacional 💚
+(deslizá / link) → [TU LINK]
+#LoQueLasMujeresNecesitan` },
+
+  { cat:'twitter', icon:'x', title:'X / Twitter · tweet',
+    text:`Por primera vez en Argentina escuchamos de forma sistemática qué necesitan las mujeres para cuidar su salud.
+
+Sumá tu voz a la Consulta Nacional "Lo que las Mujeres Necesitan" de @WGHArgentina 👇 (5 min)
+[TU LINK]
+#SaludDeLasMujeres` },
+
+  { cat:'video', icon:'play', title:'Guión · video de 30 segundos',
+    text:`[Cámara en mano, tono cercano]
+
+"Hola, soy [tu nombre]. Te quiero contar de algo en lo que estoy participando: la Consulta Nacional 'Lo que las Mujeres Necesitan'.
+
+Es la primera vez que se le pregunta, en serio y en todo el país, a las mujeres qué necesitamos para cuidar nuestra salud.
+
+Lo mejor: cada respuesta se convierte en evidencia que llega a quienes toman decisiones.
+
+Son 5 minutos. Te dejo el link acá abajo. Respondé y, si te suma, compartilo. Tu voz cuenta. 💚"
+
+[Cierre con placa: Lo que las Mujeres Necesitan · WGH Argentina]` },
+
+  { cat:'institucional', icon:'building', title:'Outreach institucional',
+    text:`Estimadas/os,
+
+Desde Women in Global Health Argentina los invitamos a sumarse como aliados en la difusión de la Consulta Nacional "Lo que las Mujeres Necesitan", el primer relevamiento federal sobre las necesidades de salud de las mujeres.
+
+Su organización puede colaborar de tres formas:
+1) Difundiendo la consulta entre sus equipos y comunidad.
+2) Designando una vocera que articule la convocatoria.
+3) Compartiendo el material en sus canales institucionales.
+
+Los resultados construirán un Mapa de Evidencia Nacional que aportará a la toma de decisiones en salud.
+
+Quedamos a disposición para coordinar. Link para responder: [TU LINK]
+
+Saludos cordiales,
+Comisión Consulta · WGH Argentina` },
+
+  { cat:'institucional', icon:'pen', title:'Firma de email / bio',
+    text:`💚 Sumá tu voz a la Consulta Nacional "Lo que las Mujeres Necesitan" — WGH Argentina → [TU LINK]` },
+];
+
+/* ---- iconos SVG por tipo ---- */
+const ICONS = {
+  mail:'<path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/>',
+  chat:'<path d="M21 11.5a8.38 8.38 0 0 1-9 8.5 8.5 8.5 0 0 1-3.8-.9L3 20l1.9-4.2A8.38 8.38 0 0 1 12 3a8.5 8.5 0 0 1 9 8.5Z"/>',
+  link:'<path d="M10 13a5 5 0 0 0 7.5.5l3-3A5 5 0 0 0 13 3.5l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3A5 5 0 0 0 11 20.5l1.7-1.7"/>',
+  cam:'<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/>',
+  x:'<path d="M4 4l16 16M20 4 4 20"/>',
+  play:'<polygon points="6 4 20 12 6 20 6 4"/>',
+  building:'<path d="M3 21h18"/><path d="M5 21V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16"/><path d="M9 7h.01M9 11h.01M9 15h.01M15 7h.01M15 11h.01M15 15h.01"/>',
+  pen:'<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>',
+};
+
+/* ---- render piezas ---- */
+const piecesEl = document.getElementById('pieces');
+function renderPieces(cat='todas'){
+  piecesEl.innerHTML='';
+  PIECES.filter(p=>cat==='todas'||p.cat===cat).forEach((p,i)=>{
+    const el=document.createElement('div');
+    el.className='piece';
+    el.innerHTML=`
+      <div class="piece-top">
+        <div class="piece-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${ICONS[p.icon]||''}</svg></div>
+        <div><div class="piece-cat">${p.cat}</div><h4>${p.title}</h4></div>
+      </div>
+      <div class="piece-text">${p.text.replace(/</g,'&lt;')}</div>
+      <div class="piece-actions">
+        <button class="copy-btn" data-i="${PIECES.indexOf(p)}">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <span>Copiar</span>
+        </button>
+      </div>`;
+    piecesEl.appendChild(el);
+  });
+}
+renderPieces();
+
+/* ---- filtros ---- */
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.filter'); if(!b)return;
+  document.querySelectorAll('.filter').forEach(f=>f.classList.remove('active'));
+  b.classList.add('active');
+  renderPieces(b.dataset.cat);
+});
+
+/* ---- copiar ---- */
+piecesEl.addEventListener('click',e=>{
+  const b=e.target.closest('.copy-btn'); if(!b)return;
+  const txt=PIECES[+b.dataset.i].text;
+  navigator.clipboard.writeText(txt).then(()=>{
+    b.classList.add('copied'); b.querySelector('span').textContent='¡Copiado!';
+    showToast('Texto copiado · pegá tu link personalizado');
+    setTimeout(()=>{b.classList.remove('copied');b.querySelector('span').textContent='Copiar';},1800);
+  });
+});
+
+/* ---- descargar toolkit completo ---- */
+document.getElementById('downloadAll').addEventListener('click',()=>{
+  const body=PIECES.map(p=>`========================================\n${p.title.toUpperCase()}  [${p.cat}]\n========================================\n\n${p.text}\n\n`).join('');
+  const header=`TOOLKIT DE AMPLIFICACIÓN\nConsulta Nacional "Lo que las Mujeres Necesitan"\nWGH Argentina · Comisión Consulta\n\nReemplazá [TU LINK] por tu link personalizado.\nGeneralo en: https://milicaro.github.io/townhalljunio/form_link_consulta.html\n\n\n`;
+  const blob=new Blob([header+body],{type:'text/plain;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download='toolkit-amplificacion-consulta-wgh.txt';
+  a.click(); URL.revokeObjectURL(a.href);
+  showToast('Toolkit descargado');
+});
+
+/* ---- contador ---- */
+(function(){
+  const c=document.getElementById('counter');
+  const cur=+c.dataset.current, goal=+c.dataset.goal;
+  const pct=Math.min(100,Math.round(cur/goal*100));
+  const fmt=n=>n.toLocaleString('es-AR');
+  document.getElementById('countGoal').textContent=fmt(goal);
+  document.getElementById('figCurrent').textContent=fmt(cur);
+  // animación
+  let n=0; const dur=1100, t0=performance.now();
+  function tick(t){
+    const k=Math.min(1,(t-t0)/dur);
+    const e=1-Math.pow(1-k,3);
+    document.getElementById('countNum').textContent=fmt(Math.round(cur*e));
+    if(k<1)requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+  setTimeout(()=>{document.getElementById('progressBar').style.width=pct+'%';},200);
+  document.getElementById('countPct').textContent=pct;
+})();
+
+/* ---- toast ---- */
+let toastT;
+function showToast(msg){
+  const t=document.getElementById('toast');
+  document.getElementById('toastMsg').textContent=msg;
+  t.classList.add('show'); clearTimeout(toastT);
+  toastT=setTimeout(()=>t.classList.remove('show'),2400);
+}
+
+/* ---- mobile drawer ---- */
+document.getElementById('navToggle').addEventListener('click',()=>{
+  const bd=document.createElement('div'); bd.className='drawer-backdrop';
+  const dr=document.createElement('div'); dr.className='drawer';
+  dr.innerHTML=`
+    <div class="drawer-head">
+      <span class="brand-text">WGH <b>Consulta</b></span>
+      <button id="drClose" style="color:#fff"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <a class="nav-link" href="#consulta">La Consulta</a>
+    <a class="nav-link" href="#participar">Participar</a>
+    <a class="nav-link" href="#voceras">Voceras</a>
+    <a class="nav-link" href="#toolkit">Toolkit</a>
+    <div class="nav-actions">
+      <a class="btn btn-outline-white" href="https://loquelasmujeresnecesitan.org" target="_blank" rel="noopener">Sitio oficial</a>
+      <a class="btn btn-accent" href="#participar">Responder consulta</a>
+    </div>`;
+  document.body.append(bd,dr);
+  const close=()=>{bd.remove();dr.remove()};
+  bd.onclick=close; dr.querySelector('#drClose').onclick=close;
+  dr.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
+});
+</script>
+</body>
+</html>
