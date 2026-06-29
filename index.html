@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Comisión Consulta · WGH Argentina — Lo que las Mujeres Necesitan</title>
-<meta name="description" content="Comisión Consulta de WGH Argentina. Sumate a la Consulta Nacional 'Lo que las Mujeres Necesitan' y amplificá la convocatoria con nuestro toolkit." />
+<title>Comisión de Consulta Nacional · WGH Argentina — Lo que las Mujeres Necesitan</title>
+<meta name="description" content="Comisión de Consulta Nacional de WGH Argentina. Sumate a la Consulta Nacional 'Lo que las Mujeres Necesitan' y amplificá la convocatoria con nuestro toolkit." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
@@ -247,7 +247,7 @@ ul{list-style:none}
       <div>
         <span class="tag-pill"><span class="dot"></span> Consulta Nacional · Activa</span>
         <h1>Lo que las mujeres <em>necesitan</em> para cuidar su salud</h1>
-        <p class="sub">La Comisión Consulta impulsa el primer relevamiento nacional que escucha de forma sistemática a las mujeres de todo el país. Tu voz construye el Mapa de Evidencia Nacional.</p>
+        <p class="sub">La Comisión de Consulta Nacional impulsa el primer relevamiento nacional que escucha de forma sistemática a las mujeres de todo el país. Tu voz construye el Mapa de Evidencia Nacional.</p>
         <div class="hero-ctas">
           <a class="btn btn-accent" href="#participar">Responder la consulta</a>
           <a class="btn btn-outline-white" href="#toolkit">Amplificá en tu red</a>
@@ -401,7 +401,7 @@ ul{list-style:none}
     <div class="footer-top">
       <div class="footer-brand">
         <span class="brand-text" style="font-size:1.1rem">WGH <b>Argentina</b></span>
-        <p>Comisión Consulta · Women in Global Health Argentina. Impulsamos el liderazgo de las mujeres en salud y políticas públicas basadas en evidencia.</p>
+        <p>Comisión de Consulta Nacional · Women in Global Health Argentina. Impulsamos el liderazgo de las mujeres en salud y políticas públicas basadas en evidencia.</p>
       </div>
       <div class="footer-col">
         <h5>La consulta</h5>
@@ -412,13 +412,15 @@ ul{list-style:none}
       </div>
       <div class="footer-col">
         <h5>Comisiones WGH</h5>
-        <a href="#">Consulta</a>
-        <a href="#">Coloquio</a>
-        <a href="#">Comunidad</a>
-        <a href="#">Alianza</a>
+                <a href="https://milicaro.github.io/consulta-wgh/" target="_blank" rel="noopener">Consulta Nacional</a>
+        <a href="https://milicaro.github.io/coloquio-wgh/" target="_blank" rel="noopener">Coloquio de Líderes en Salud</a>
+        <a href="https://milicaro.github.io/comunidad-wgh/" target="_blank" rel="noopener">Comunidad y Formación</a>
+        <a href="https://milicaro.github.io/alianza-wgh/" target="_blank" rel="noopener">Alianza por la Salud de la Mujer</a>
+        <a href="https://milicaro.github.io/comisiones-wgh/" target="_blank" rel="noopener">Portal + reglamento</a>
+
       </div>
     </div>
-    <div class="footer-bottom">© 2026 Women in Global Health Argentina · Comisión Consulta. Hecho con 💚 por la red.</div>
+    <div class="footer-bottom">© 2026 Women in Global Health Argentina · Comisión de Consulta Nacional. Hecho con 💚 por la red.</div>
   </div>
 </footer>
 
@@ -524,7 +526,7 @@ Los resultados construirán un Mapa de Evidencia Nacional que aportará a la tom
 Quedamos a disposición para coordinar. Link para responder: [TU LINK]
 
 Saludos cordiales,
-Comisión Consulta · WGH Argentina` },
+Comisión de Consulta Nacional · WGH Argentina` },
 
   { cat:'institucional', icon:'pen', title:'Firma de email / bio',
     text:`💚 Sumá tu voz a la Consulta Nacional "Lo que las Mujeres Necesitan" — WGH Argentina → [TU LINK]` },
@@ -588,7 +590,7 @@ piecesEl.addEventListener('click',e=>{
 /* ---- descargar toolkit completo ---- */
 document.getElementById('downloadAll').addEventListener('click',()=>{
   const body=PIECES.map(p=>`========================================\n${p.title.toUpperCase()}  [${p.cat}]\n========================================\n\n${p.text}\n\n`).join('');
-  const header=`TOOLKIT DE AMPLIFICACIÓN\nConsulta Nacional "Lo que las Mujeres Necesitan"\nWGH Argentina · Comisión Consulta\n\nReemplazá [TU LINK] por tu link personalizado.\nGeneralo en: https://milicaro.github.io/townhalljunio/form_link_consulta.html\n\n\n`;
+  const header=`TOOLKIT DE AMPLIFICACIÓN\nConsulta Nacional "Lo que las Mujeres Necesitan"\nWGH Argentina · Comisión de Consulta Nacional\n\nReemplazá [TU LINK] por tu link personalizado.\nGeneralo en: https://milicaro.github.io/townhalljunio/form_link_consulta.html\n\n\n`;
   const blob=new Blob([header+body],{type:'text/plain;charset=utf-8'});
   const a=document.createElement('a');
   a.href=URL.createObjectURL(blob);
