@@ -10,7 +10,7 @@ Página HTML self-contained (un solo archivo, sin paso de build). Lista para pub
 - Tipografía: Inter
 
 ## Cómo editar
-- **Contador de respuestas:** en `index.html`, en el `<div id="counter" data-current="1800" data-goal="5000">`. Cambiá `data-current` (respuestas actuales) y `data-goal` (meta). Se actualiza solo en toda la página.
+- **Contador de respuestas:** en `index.html`, en el `<div id="counter" data-current="1800" data-goal="5000">`. Cambiá `data-current` (respuestas actuales) y `data-goal` (meta, 20000). Se actualiza solo en toda la página.
 - **Toolkit de amplificación:** las 10 piezas están en el array `PIECES` dentro del `<script>`. Editá los textos libremente. Usá `[TU LINK]` como marcador del link personalizado.
 
 ## Links integrados

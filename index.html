@@ -202,6 +202,13 @@ ul{list-style:none}
   .figure:last-child{border-bottom:none}
   .footer-top{grid-template-columns:1fr}
 }
+
+/* líderes de la comisión */
+.leaders-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:36px}
+.leader{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.leader .lead-av{width:54px;height:54px;border-radius:50%;background:var(--accent-soft);color:var(--midnight);display:grid;place-items:center;font-weight:800;font-size:1.18rem;flex-shrink:0}
+.leader .lead-name{font-weight:700;font-size:1.08rem}
+.leader .lead-role{color:var(--muted);font-size:.9rem}
 </style>
 </head>
 <body>
@@ -254,12 +261,13 @@ ul{list-style:none}
         </div>
       </div>
       <!-- CONTADOR: editar data-current y data-goal -->
-      <div class="counter-card" id="counter" data-current="1800" data-goal="5000">
+      <div class="counter-card" id="counter" data-current="1800" data-goal="20000">
         <div class="counter-label">Respuestas recibidas</div>
         <div class="counter-num"><span id="countNum">1.800</span></div>
-        <div class="counter-goal">de <strong id="countGoal">5.000</strong> · meta nacional</div>
+        <div class="counter-goal">de <strong id="countGoal">20.000</strong> · meta a octubre</div>
         <div class="progress"><span id="progressBar" style="width:0%"></span></div>
         <div class="counter-pct"><span id="countPct">0</span>% alcanzado · ¡faltás vos!</div>
+        <div class="counter-goal" style="margin-top:6px">Hito para el Coloquio (24/8): <strong>5.000 a 10.000</strong></div>
       </div>
     </div>
   </div>
@@ -297,7 +305,7 @@ ul{list-style:none}
     <div class="figures">
       <div class="figure"><div class="n">51%</div><p>de la población argentina son mujeres y principales usuarias del sistema de salud</p></div>
       <div class="figure"><div class="n" id="figCurrent">1.800</div><p>mujeres ya respondieron la consulta en todo el país</p></div>
-      <div class="figure"><div class="n">5.000</div><p>es la meta nacional para un mapa verdaderamente representativo</p></div>
+      <div class="figure"><div class="n">20.000</div><p>meta nacional a octubre · 5.000 a 10.000 para el Coloquio (24/8)</p></div>
     </div>
   </div>
 </section>
@@ -347,7 +355,7 @@ ul{list-style:none}
       </div>
       <div class="step">
         <h3>Compartí y sumá</h3>
-        <p>Difundí con tu link personalizado y mirá cómo crece el contador hacia las 5.000 respuestas.</p>
+        <p>Difundí con tu link personalizado y mirá cómo crece el contador hacia las 20.000 respuestas.</p>
       </div>
     </div>
   </div>
@@ -380,6 +388,20 @@ ul{list-style:none}
     </div>
 
     <div class="pieces" id="pieces"><!-- piezas inyectadas por JS --></div>
+  </div>
+</section>
+
+
+<!-- LÍDERES DE LA COMISIÓN -->
+<section class="section">
+  <div class="container">
+    <p class="eyebrow">Liderazgo</p>
+    <h2 class="section-title">Líderes de la comisión</h2>
+    <p class="lead">Quienes coordinan y facilitan el trabajo del equipo, dan seguimiento a los acuerdos y apoyan la coordinación general.</p>
+    <div class="leaders-grid">
+      <div class="leader"><div class="lead-av">EC</div><div><div class="lead-name">Emilia Caro</div><div class="lead-role">Co-líder · Presidenta WGH</div></div></div>
+      <div class="leader"><div class="lead-av">KB</div><div><div class="lead-name">Karen Borensztein</div><div class="lead-role">Co-líder de la comisión</div></div></div>
+    </div>
   </div>
 </section>
 
@@ -466,7 +488,7 @@ Sumá tu voz a la Consulta Nacional de WGH Argentina 👉 [TU LINK]
 
 Women in Global Health Argentina lanzó la Consulta Nacional "Lo que las Mujeres Necesitan", el primer relevamiento federal que transforma voces territoriales en evidencia para la política pública.
 
-Ya somos miles, pero queremos llegar a 5.000 respuestas para que el mapa sea verdaderamente representativo.
+Ya somos miles, pero queremos llegar a 20.000 respuestas para que el mapa sea verdaderamente representativo.
 
 Te invito a responder (son 5 minutos) y a compartirlo en tu red 👉 [TU LINK]
 
